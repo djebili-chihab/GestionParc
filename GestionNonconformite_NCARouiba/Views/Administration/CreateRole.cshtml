@@ -1,0 +1,46 @@
+﻿@model CreateRoleViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="app-main__inner">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page"><a asp-controller="Administration" asp-action="roleIndex">Roles</a></li>
+            <li class="active breadcrumb-item" aria-current="page">Nouveau</li>
+        </ol>
+    </nav>
+    <form class="" asp-controller="Administration" asp-action="createRole" method="post" >
+        <div class="row">
+            <div class="col-lg-12">
+                <button class="mb-2 mr-2 btn btn-info" type="submit">Sauvegarder</button>
+                <a asp-controller="Administration" asp-action="roleIndex"><button class="mb-2 mr-2 btn btn-outline-info">Annuler</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nouveau Role</h5>
+                        
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label asp-for="RoleName">Titre du role *</label>
+                                    <input placeholder="" class="form-control" asp-for="RoleName" />
+                                    <span asp-validation-for="RoleName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-relative form-group">
+                            <label asp-for="Description">Description</label>
+                            <textarea placeholder="" class="form-control" asp-for="Description" rows="3"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>

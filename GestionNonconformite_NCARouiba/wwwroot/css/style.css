@@ -1,0 +1,57 @@
+﻿.btn-header-nav {
+    color: #fff;
+    background-color: rgba(0,0,0,0.1);
+    border-color: #3ac47d;
+    border-radius: .60rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .btn-header-nav:hover {
+        color: #fff;
+        background-color: rgba(0,0,0,0.15);
+        border-color: #2e9d64
+    }
+
+    .btn-header-nav:focus, .btn-header-nav.focus {
+        box-shadow: 0 0 0 0 rgba(88,205,145,0.5)
+    }
+
+.notification-text {
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 10px;
+    background-color: rgba(0,0,0,0.15);
+    border-radius: 5px;
+    padding: 1px 3px 1px 3px;
+}
+
+.icon-header {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btn-action .btn {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.icon-action-view {
+    color: cornflowerblue;
+}
+
+.icon-action-edit {
+    color: mediumseagreen;
+}
+
+.icon-action-delete {
+    color: crimson;
+}
+
+.btn-group-top-menu {
+    padding-bottom: 10px;
+    color: cornflowerblue
+}

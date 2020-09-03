@@ -1,0 +1,118 @@
+﻿@model EditUserViewModel
+
+@{
+    ViewBag.Title = "Editer";
+    String UserId = ViewBag.UserId;
+    String AvatarPath = ViewBag.AvatarPath;
+}
+
+
+
+
+<div class="app-main__inner">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page"><a asp-action="detail" asp-route-id="@Model.Id">Mon compte</a></li>
+            <li class="active breadcrumb-item" aria-current="page">Editer</li>
+        </ol>
+    </nav>
+    <form asp-action="edit" method="post" enctype="multipart/form-data" >
+        <div class="row">
+            <div class="col-lg-12 btn-group-top-menu">
+                <button class="mb-2 mr-2 btn btn-info" type="submit">Sauvegarder</button>
+                <a asp-action="detail" asp-route-id="@Model.Id" class="mb-2 mr-2 btn btn-outline-info">Annuler</a>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        <h5 class="card-title">@Model.Nom @Model.Prenom</h5>
+                    </div>
+                    <div class="card-body">
+                        
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input asp-for="Id" hidden />
+                        <input asp-for="Nom" hidden />
+                        <input asp-for="Prenom" hidden />
+                        
+                        <div class="position-relative form-group">
+                            <label asp-for="Fonction">Fonction</label>
+                            <input placeholder="" class="form-control" asp-for="Fonction" />
+                            <span asp-validation-for="Fonction" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label class="col-form-label" asp-for="Photo">Photo</label>
+                                    <div class="custom-file">
+                                        <input class=" custom-file-input" asp-for="Photo" />
+                                        <label class="col-form-label custom-file-label">Choisissez une photo ...</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label asp-for="PhoneNumber">Tél</label>
+                                    <input placeholder="" class="form-control" asp-for="PhoneNumber" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label asp-for="Adresse">Adresse</label>
+                                    <input placeholder="" class="form-control" asp-for="Adresse" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label asp-for="Email">Email</label>
+                                    <input placeholder="" class="form-control" asp-for="Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label asp-for="Password">Mot de passe</label>
+                                    <input placeholder="" class="form-control" asp-for="Password" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label asp-for="PasswordConfirm">Confirmation du mot de passe *</label>
+                                    <input placeholder="" class="form-control" asp-for="PasswordConfirm" />
+                                    <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(
+            function () {
+                $('.custom-file-input').on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    console.log(fileName);
+                    console.log($(this).next('.custom-file-label').html());
+                    $(this).next('.custom-file-label').text(fileName);
+                });
+
+                
+            });
+    </script>
+}
+

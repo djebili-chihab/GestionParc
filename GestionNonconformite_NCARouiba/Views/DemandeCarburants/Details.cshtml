@@ -1,0 +1,77 @@
+﻿@model GestionNonconformite_NCARouiba.Models.Entities.DemandeCarburant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="app-main__inner">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+
+            <li class="active breadcrumb-item" aria-current="page">Détails</li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-lg-12 btn-group-top-menu">
+            <a class="mb-2 mr-2 btn btn-info" asp-action="Delete" asp-route-id="@Model.Id">Supprimer</a>
+
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="main-card mb-3 card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Détail de la demande </h5>
+                    <br />
+                    <dl class="row">
+                        <dt class="col-sm-3 border-right">
+                            @Html.DisplayNameFor(model => model.Conducteur)
+                        </dt>
+                        <dd class="col-sm-9">
+                            @Html.DisplayFor(model => model.Conducteur.Id)
+                        </dd>
+                        <dt class="col-sm-3 border-right">
+                            @Html.DisplayNameFor(model => model.car)
+                        </dt>
+                        <dd class="col-sm-9">
+                            @Html.DisplayFor(model => model.car.Matricule)
+                        </dd>
+                        <dt class="col-sm-3 border-right">
+                            @Html.DisplayNameFor(model => model.Date)
+                        </dt>
+                        <dd class="col-sm-9">
+                            @Html.DisplayFor(model => model.Date)
+                        </dd>
+                        <dt class="col-sm-3 border-right">
+                            @Html.DisplayNameFor(model => model.NouveauKM)
+                        </dt>
+                        <dd class="col-sm-9">
+                            @Html.DisplayFor(model => model.NouveauKM)
+                        </dd>
+                        <dt class="col-sm-3 border-right">
+                            @Html.DisplayNameFor(model => model.PreuveKM)
+                        </dt>
+                        <dd class="col-sm-9">
+                            <div class="card">
+                                <img src="~/images/@Model.PreuveKM" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    
+                                </div>
+                            </div>
+                        </dd>
+                        <dt class="col-sm-3 border-right">
+                            @Html.DisplayNameFor(model => model.Commentaire)
+                        </dt>
+                        <dd class="col-sm-9">
+                            @Html.DisplayFor(model => model.Commentaire)
+                        </dd>
+                       
+
+                    </dl>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

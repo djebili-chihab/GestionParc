@@ -1,0 +1,144 @@
+﻿@model Role
+
+@{
+    ViewBag.Title = "Editer";
+    List<UserRoleViewModel> ListUsers = ViewBag.ListUsers;
+    int ligne = 1;
+}
+
+<div class="app-main__inner">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page"><a asp-controller="Administration" asp-action="roleIndex">Roles</a></li>
+            <li class="active breadcrumb-item" aria-current="page">Editer</li>
+        </ol>
+    </nav>
+    <form class="" asp-controller="Administration" asp-action="EditRole" asp-route-id="@Model.Id" method="post">
+        <div class="row">
+            <div class="col-lg-12">
+                <button class="mb-2 mr-2 btn btn-info" type="submit">Sauvegarder</button>
+                <a asp-controller="Administration" asp-action="roleIndex"><button class="mb-2 mr-2 btn btn-outline-info">Annuler</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-body">
+                        <h5 class="card-title">Role</h5>
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input placeholder="" class="form-control" asp-for="Id" hidden="hidden" disabled="disabled" />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label asp-for="Name">Titre du role *</label>
+                                    <input placeholder="" class="form-control" asp-for="Name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-relative form-group">
+                            <label asp-for="Description">Description</label>
+                            <textarea placeholder="" class="form-control" asp-for="Description" rows="3"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+                <div class="card-header border-0">
+                    <h5 class="card-title">Liste des utilisateurs</h5>
+                    <div class="btn-actions-pane-right">
+                        <button type="button" class="btn mr-2 mb-2 btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">
+                            <i class="nav-link-icon  fa fa-plus "> </i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @if (ListUsers.Any())
+                    {
+                        <table class="mb-0 table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th hidden="hidden">Id</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Fonction</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var user in ListUsers)
+                                {
+                                    <tr>
+                                        <td>@ligne</td>
+                                        <td hidden="hidden">@user.Id</td>
+                                        <td>@user.Nom</td>
+                                        <td>@user.Prenom</td>
+                                        <td>@user.Fonction</td>
+                                        <td>
+                                            <form asp-controller="Administration" asp-action="RemoveUserFromRole" asp-route-idUser="@user.Id" asp-route-idRole="@Model.Id" method="post">
+                                                <button class="btn" type="submit" onclick="return confirm('L\'utlistaeur @user.Nom @user.Prenom n\'appartiendera plus au role @Model.Name')">
+                                                    <i class="nav-link-icon  fa fa-times icon-action-delete"> </i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                    ligne++;
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <label>Aucun utilisateurs pour le moment !</label>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Models{
+    <!-- Large modal -->
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form asp-controller="administration" asp-action="editListUsersRole" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modifier la liste des utilisateurs</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+
+                       
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts{ 
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+    });
+</script>
+}

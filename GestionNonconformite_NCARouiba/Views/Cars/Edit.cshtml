@@ -1,0 +1,158 @@
+﻿@model GestionNonconformite_NCARouiba.Models.Entities.Car
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="app-main__inner">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="active breadcrumb-item" aria-current="page">Modifier les details d'une vihecule</li>
+
+        </ol>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="main-card mb-3 card">
+                <form asp-action="Edit" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <h5 class="card-title">Modifier vihecule</h5>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="position-relative row form-group">
+                            <label asp-for="UserId" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="Matricule" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Matricule" class="form-control" />
+                                <span asp-validation-for="Matricule" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="DateAssurance" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="DateAssurance" class="form-control" type="date" asp-format="{0:yyyy-MM-dd}" />
+                                <span asp-validation-for="DateAssurance" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="DateControlTech" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="DateControlTech" class="form-control" type="date" asp-format="{0:yyyy-MM-dd}" />
+                                <span asp-validation-for="DateControlTech" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="DateScannaire" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="DateScannaire" class="form-control" type="date" asp-format="{0:yyyy-MM-dd}" />
+                                <span asp-validation-for="DateScannaire" class="text-danger"></span>
+                            </div> 
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="marque" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="marque" class="form-control" />
+                                <span asp-validation-for="marque" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="Categorie" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Categorie" class="form-control" />
+                                <span asp-validation-for="Categorie" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="Kilometrage" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Kilometrage" class="form-control" />
+                                <span asp-validation-for="Kilometrage" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="Carburant" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Carburant" class="form-control" />
+                                <span asp-validation-for="Carburant" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="Photo" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <div class="custom-file">
+                                    <input class="custom-file-input" type="file" id="inputGroupFile02" asp-for="Photo" />
+                                    <label class="col-form-label custom-file-label">Choisissez un ficheir ...</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="Statue" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Statue" class="form-control" />
+                                <span asp-validation-for="Statue" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="EnMission" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="EnMission" class="form-control" />
+                                <span asp-validation-for="EnMission" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="NumChassis" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="NumChassis" class="form-control" />
+                                <span asp-validation-for="NumChassis" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="Couleur" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Couleur" class="form-control" />
+                                <span asp-validation-for="Couleur" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="model" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="model" class="form-control" />
+                                <span asp-validation-for="model" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-footer justify-content-end">
+                        <button type="submit" class="btn btn-info">Sauvegarder</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

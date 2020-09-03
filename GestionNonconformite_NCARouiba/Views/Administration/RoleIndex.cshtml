@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Role>
+
+@{
+    ViewBag.Title = "Utilisateurs";
+    int ligne = 1;
+}
+
+<div class="app-main__inner">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="active breadcrumb-item" aria-current="page">Roles</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <a asp-controller="administration" asp-action="createRole"><button class="mb-2 mr-2 btn btn-info">Créer</button></a>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Roles</h5>
+                    <table class="mb-0 table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Role</th>
+                                <th>Description</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var role in Model)
+                            {
+                            <tr>
+                                <td>@ligne</td>
+                                <td>@role.Name</td>
+                                <td>@role.Description</td>
+                                <td class="btn-action">
+                                    <a class="btn" asp-controller="administration" asp-action="">
+                                        <i class="nav-link-icon fa fa-eye icon-action-view"> </i>
+                                    </a>
+                                    <a class="btn" asp-controller="administration" asp-action="editRole" asp-route-id="@role.Id">
+                                        <i class="nav-link-icon fa fa-edit icon-action-edit"> </i>
+                                    </a>
+                                    <a class="btn" asp-controller="administration" asp-action="">
+                                        <i class="nav-link-icon  fa fa-trash icon-action-delete"> </i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                                ligne++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+

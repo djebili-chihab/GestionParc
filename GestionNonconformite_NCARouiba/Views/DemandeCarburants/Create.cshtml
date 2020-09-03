@@ -1,0 +1,89 @@
+﻿@model GestionNonconformite_NCARouiba.Models.Entities.DemandeCarburant
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="app-main__inner">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="active breadcrumb-item" aria-current="page">Ajouter une nouvelle demande</li>
+
+        </ol>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="main-card mb-3 card">
+                <form asp-action="Create" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <h5 class="card-title">Nouvelle Demande</h5>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="UserId" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                            </div>
+
+                        </div>
+                        <div class="position-relative row form-group">
+                            <label asp-for="CarId" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <select asp-for="CarId" class="form-control" asp-items="ViewBag.CarId"></select>
+                            </div>
+
+                        </div>
+                        
+                        <div class="position-relative row form-group">
+                            <label asp-for="Date" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Date" class="form-control" />
+                                <span asp-validation-for="Date" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        
+                        <div class="position-relative row form-group">
+                            <label asp-for="NouveauKM" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="NouveauKM" class="form-control" />
+                                <span asp-validation-for="NouveauKM" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                       
+                        <div class="position-relative row form-group">
+                            <label asp-for="PreuveKM" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <div class="custom-file">
+                                    <input class="custom-file-input" type="file" id="inputGroupFile02" asp-for="PreuveKM" />
+                                    <label class="col-form-label custom-file-label">Choisissez un ficheir ...</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="position-relative row form-group">
+                            <label asp-for="Commentaire" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Commentaire" class="form-control" />
+                                <span asp-validation-for="Commentaire" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-footer justify-content-end">
+                        <button type="submit" class="btn btn-info">Sauvegarder</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

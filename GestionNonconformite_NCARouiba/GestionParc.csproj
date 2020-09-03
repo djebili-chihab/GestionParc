@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200326214232_AddUserMigration2.cs" />
+    <Compile Remove="Migrations\20200326214232_AddUserMigration2.Designer.cs" />
+    <Compile Remove="Migrations\20200330200906_RoleDescriptionMigration.cs" />
+    <Compile Remove="Migrations\20200330200906_RoleDescriptionMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\main.css" />
+    <Content Remove="wwwroot\fonts\fa-solid-900.eot" />
+    <Content Remove="wwwroot\fonts\fa-solid-900.svg" />
+    <Content Remove="wwwroot\fonts\fa-solid-900.ttf" />
+    <Content Remove="wwwroot\fonts\fa-solid-900.woff" />
+    <Content Remove="wwwroot\fonts\fa-solid-900.woff2" />
+    <Content Remove="wwwroot\fonts\Pe-icon-7-stroke.eot" />
+    <Content Remove="wwwroot\fonts\Pe-icon-7-stroke.svg" />
+    <Content Remove="wwwroot\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Remove="wwwroot\fonts\Pe-icon-7-stroke.woff" />
+    <Content Remove="wwwroot\js\main.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\fonts\fa-solid-900.eot" />
+    <None Include="wwwroot\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\fonts\fa-solid-900.ttf" />
+    <None Include="wwwroot\fonts\fa-solid-900.woff" />
+    <None Include="wwwroot\fonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\fonts\Pe-icon-7-stroke.eot" />
+    <None Include="wwwroot\fonts\Pe-icon-7-stroke.svg" />
+    <None Include="wwwroot\fonts\Pe-icon-7-stroke.ttf" />
+    <None Include="wwwroot\fonts\Pe-icon-7-stroke.woff" />
+    <None Include="wwwroot\images\avatars\1.jpg" />
+    <None Include="wwwroot\images\avatars\10.jpg" />
+    <None Include="wwwroot\images\avatars\11.jpg" />
+    <None Include="wwwroot\images\avatars\12.jpg" />
+    <None Include="wwwroot\images\avatars\2.jpg" />
+    <None Include="wwwroot\images\avatars\3.jpg" />
+    <None Include="wwwroot\images\avatars\4.jpg" />
+    <None Include="wwwroot\images\avatars\5.jpg" />
+    <None Include="wwwroot\images\avatars\8.jpg" />
+    <None Include="wwwroot\images\avatars\9.jpg" />
+    <None Include="wwwroot\images\logo-inverse.png" />
+    <None Include="wwwroot\images\logo.png" />
+    <None Include="wwwroot\js\main.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\IRepositories\" />
+    <Folder Include="Models\Repositories\" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+
+
+</Project>

@@ -1,0 +1,102 @@
+﻿@model DetailsUserViewModel
+
+@{
+    ViewBag.Title = "Mon compte";
+    String UserId = ViewBag.UserId;
+    String AvatarPath = ViewBag.AvatarPath;
+}
+
+
+
+
+<div class="app-main__inner">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="active breadcrumb-item" aria-current="page">Mon compte</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-12 btn-group-top-menu">
+            <a asp-action="edit" asp-route-id="@Model.User.Id" class="mb-2 mr-2 btn btn-info">Editer</a>
+
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    <h5 class="card-title">Mon compte</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="position-relative row form-group justify-content-center">
+                                <a href="~/images/avatars/@Model.User.PhotoPath" target="_blank">
+                                    <img width="100" class="rounded-circle" src="~/images/avatars/@Model.User.PhotoPath" alt="" id="avatard">
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <dl class="row ">
+                                <dt class="col-sm-3 border-right">
+                                    Nom
+                                </dt>
+                                <dd class="col-sm-9 ">
+                                    @Model.User.Nom
+                                </dd>
+                                <dt class="col-sm-3  border-right">
+                                    Prénom
+                                </dt>
+                                <dd class="col-sm-9">
+                                    @Model.User.Prenom
+                                </dd>
+                                <dt class="col-sm-3  border-right">
+                                    Fonction
+                                </dt>
+                                <dd class="col-sm-9">
+                                    @Model.User.Fonction
+                                </dd>
+                                <dt class="col-sm-3  border-right">
+                                    Adresse
+                                </dt>
+                                <dd class="col-sm-9">
+                                    @Model.User.Adresse
+                                </dd>
+                                <dt class="col-sm-3  border-right">
+                                    Tél
+                                </dt>
+                                <dd class="col-sm-9">
+                                    @Model.User.PhoneNumber
+                                </dd>
+                                <dt class="col-sm-3  border-right">
+                                    Email
+                                </dt>
+                                <dd class="col-sm-9 ">
+                                    @Model.User.Email
+                                </dd>
+
+                                <dt class="col-sm-3  border-right">
+                                    Roles
+                                </dt>
+                                <dd class="col-sm-9 ">
+                                    @foreach (string role in Model.UserRoles)
+                                    {
+                                        <label>@role ,</label>
+                                    }
+                                </dd>
+
+                            </dl>
+                        </div>
+                    </div>
+                    
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

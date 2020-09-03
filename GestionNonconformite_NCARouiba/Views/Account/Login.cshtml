@@ -1,0 +1,54 @@
+﻿
+@model LogingViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutLoging.cshtml";
+    ViewBag.Title = "Loging";
+}
+
+    <div class="app-container app-theme-white">
+        <div class="app-main">
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="row justify-content-center align-content-center">
+                        <div class="col-md-4">
+                            <div class="main-card mb-3 card">
+                                <form class="" asp-controller="account" asp-action="login" method="post">
+                                   
+                                    <div class="card-body">
+                                        <div class="card-header border-white justify-content-center " style="height:150px;">
+                                            <img src="~/images/logo-inverse.png" />
+                                        </div>
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                        <div class="position-relative form-group">
+                                            <input placeholder="Email" class="form-control" asp-for="Email" />
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+                                        <div class="position-relative form-group">
+                                            <input placeholder="Password" class="form-control" asp-for="Password" />
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                        <div class="position-relative form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input asp-for="RemenberMe" class="form-check-input" /> @Html.DisplayNameFor(m => m.RemenberMe)
+                                            </label>
+
+                                        </div>
+                                        <div class="position-relative form-group" style="margin-top: 20px;">
+                                            <button type="submit" class="mb-2 mr-2 btn btn-success btn-lg btn-block">
+                                                Login
+                                            </button>
+                                        </div>
+                                        <div class="position-relative form-group" style="margin-bottom: 30px;">
+                                            <button class="mb-2 mr-2 btn border-0 btn-light btn-lg btn-block">
+                                                Mot de passe oublié ?
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
