@@ -4622,7 +4622,7 @@ a,button,.btn{outline:none !important}
 
 .app-theme-white .app-page-title{background:rgba(255,255,255,0.45)}
 
-.app-theme-white .app-footer .app-footer__inner,.app-theme-white .app-header{background:#3dc37d}
+.app-theme-white .app-footer .app-footer__inner,.app-theme-white .app-header{background:#0086c3}
 
 .app-theme-white.fixed-header .app-header__logo{background:rgba(250,251,252,0.1)}
 
@@ -10632,7 +10632,7 @@ a.fc-more:hover{text-decoration:underline}
 
 .sidebar-mobile-open .app-sidebar .app-header__logo{width:auto !important}
 
-.sidebar-mobile-open .app-sidebar .app-header__logo .logo-src{width:97px !important;margin-left:auto;margin-right:0}
+.sidebar-mobile-open .app-sidebar .app-header__logo .logo-src{width:110px !important;margin-left:auto;margin-right:0}
 
 .sidebar-mobile-open .fixed-sidebar .app-sidebar{height:100%}
 
